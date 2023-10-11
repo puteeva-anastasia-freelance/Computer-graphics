@@ -1,0 +1,31 @@
+<section class="order"
+	style="background: linear-gradient(rgba(0, 0, 0, 0.6) 0%, rgba(0, 0, 0, 0.6) 100%), url(img/dist/bg-order.jpg) center / cover no-repeat ">
+	<div class="container order__container">
+		<div class="order__wrap">
+			<h2 class="h2 order__title">Обратная связь</h2>
+			<form class="order__form form-application">
+				<div class="order__errors">
+					<span class="txt order__error order__error-phone">Для отправки формы, пожалуйста, укажите Ваш номер телефона</span>
+					<span class="policy__error order__error">Для отправки данных подтвердите согласие на&nbsp;обработку персональных данных, нажав на&nbsp;кнопку ниже</span>	
+				</div>
+				<input type="hidden" name="name-form" value="Заказать звонок">
+				<div class="order__inner">
+					<div class="order__name">
+						<input type="text" class="order__input" placeholder="Укажите Ваше имя" name="name">
+					</div>
+					<div class="order__phone">
+						<input required class="order__input mask-phone" type="text" placeholder="Укажите Ваш номер телефона"
+							name="phone">
+					</div>
+					<div class="policy">
+						<input class="policy__checkbox" id="order-privacy-policy" type="checkbox" name="privacy-policy" checked="">
+						<label class="policy__label" for="order-privacy-policy">Нажимая на&nbsp;кнопку, вы&nbsp;даете согласие
+							на&nbsp;<a href="agreement.pdf" target="_blank" class="policy__link"
+								title="Ознакомиться с обработкой персональных данных">обработку персональных данных</a></label>
+					</div>
+				</div>
+				<button type="submit" class="button button__accent order__button">Заказать звонок</button>
+			</form>
+		</div>
+	</div>
+</section>

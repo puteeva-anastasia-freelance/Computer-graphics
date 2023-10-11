@@ -1,0 +1,57 @@
+.policy
+	margin-top: 16px
+	font-size: 12px
+	line-height: 150%
+	position: relative
+	color: white
+	width: 87%
+
+	@media (max-width: 768px)
+		width: 344px
+		font-size: 11px
+
+	&:hover
+		.policy__label::before
+			transform: scale(1.1)
+
+	&__label
+		padding-left: 34px
+		position: relative
+		width: 86%
+		display: block
+		cursor: pointer
+
+		&::before
+			content: ''
+			display: block
+			width: 22px
+			height: 22px
+			border-radius: 4px
+			background-color: white
+			position: absolute
+			left: 0
+			top: 3px
+			transition: transform .2s ease-in-out
+			border: 2px solid $accent
+			box-sizing: border-box
+
+	&__link
+		color: inherit
+		transition: color .2s ease-in-out
+
+		&:hover
+			color: $accent
+
+	&__checkbox
+		display: none
+
+		&:checked + .policy__label::before
+			background-color: $accent
+			background-image: url("data:image/svg+xml,%3Csvg width='8' height='6' viewBox='0 0 8 6' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M6.76189 1.42871L3.09523 5.09538L1.42856 3.42871' stroke='white' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E%0A")
+			background-repeat: no-repeat
+			background-position: center
+
+	&__error
+		display: none
+		color: $accent
+		margin-top: 5px

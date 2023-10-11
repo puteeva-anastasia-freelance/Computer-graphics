@@ -1,0 +1,224 @@
+.main-footer
+	display: flex
+	flex-wrap: wrap
+	background-color: #2F3338
+	padding-top: 19px
+
+	@media (max-width: 992px)
+		padding-top: 4px
+	
+	@media (max-width: 720px)
+		padding-top: 20px
+
+	@media (max-width: 625px)
+		padding-top: 22px
+
+	&__container
+		width: 1360px
+		display: flex
+		justify-content: space-between
+		padding-bottom: 19px
+
+		@media (max-width: 992px)
+			padding-bottom: 4px
+		
+		@media (max-width: 720px)
+			padding-bottom: 20px
+		
+		@media (max-width: 625px)
+			flex-direction: column
+			align-items: center
+			justify-content: flex-start
+			padding-bottom: 152px
+
+	&__item
+		font-family: $inter-font
+		font-weight: 625
+		font-size: 16px
+		color: #F5F5F5
+		display: flex
+		align-items: center
+		text-decoration: none
+		margin-right: 50px
+		margin-top: 1px
+
+		@media (max-width: 992px)
+			font-size: 14px
+			margin-top: 2px
+			margin-right: 56px
+		
+		@media (max-width: 1020px)
+			margin-left: auto
+			margin-right: 0
+			margin-top: 0
+		
+		@media (max-width: 720px)
+			font-size: 16px
+			margin-right: 2px
+
+		@media (max-width: 625px)
+			margin: 0 auto
+		
+		&:last-child
+			margin-right: 0
+
+		&-email, &-imdb
+			@media (max-width: 625px)
+				margin: 25px auto 0
+				margin-left: 0
+
+		&:hover
+			text-decoration: underline	
+	
+	&__icon
+		margin-right: 9px
+
+		@media (max-width: 720px)
+			margin-right: 8px
+			margin-top: 2px
+
+			&-phone
+				margin-right: 5px
+			
+	&__right
+		display: flex
+		justify-content: space-between
+		align-items: center
+
+		@media (max-width: 1020px)
+			flex-wrap: wrap
+			position: relative
+			max-width: 239px
+			height: 55px
+			padding-top: 17px
+	
+		@media (max-width: 720px)
+			padding-top: 15px
+			height: 65px
+		
+		@media (max-width: 625px)
+			padding-top: 51px
+	
+	&__bottom
+		display: flex
+		justify-content: flex-end
+		padding-top: 14px
+		
+		@media (max-width: 625px)
+			display: block
+	
+	&__itoblaka
+		display: flex
+		align-items: center
+		font-family: $inter-font
+		font-size: 14px
+		color: $txt
+		text-decoration: none	
+
+		@media (max-width: 720px)
+			font-size: 12px	
+
+		&-icon
+			margin-left: 10px
+			fill: black
+			
+			@media (max-width: 720px)
+				margin-left: 11px
+				fill: white
+				width: 152px
+				height: auto
+		
+	&__logo
+		@media (max-width: 720px)
+			height: 67px
+			width: auto
+	
+	&__copyright
+		width: 100%
+		background-color: #000000
+		position: relative
+		padding: 7px 0
+		
+		@media (max-width: 992px)
+			padding: 4px 0
+
+		@media (max-width: 625px)
+			position: relative
+			padding: 10px 0
+
+		&-container
+			display: flex
+			justify-content: space-between
+			align-items: center
+			max-width: 1360px		
+
+		&-txt
+			font-family: $inter-font
+			font-size: 14px
+			color: #FFFFFF
+			margin: 0
+
+			@media (max-width: 720px)
+				font-size: 12px
+		
+		&-itoblaka
+			display: flex
+			color: #fff
+
+			@media (max-width: 625px)
+				position: absolute
+				top: -34px
+				width: 285px
+				display: flex
+				justify-content: space-between
+				margin: 0 auto
+				left: 0
+				right: 0
+
+	&__social
+		display: flex
+		padding: 0
+		margin: 0
+		margin-right: 18px	
+		margin-top: 5px
+		
+		@media (max-width: 1020px)
+			position: absolute
+			left: -174px
+
+		@media (max-width: 720px)
+			margin-top: -24px
+			left: -150px
+		
+		@media (max-width: 625px)
+			position: static
+			order: 1
+			margin: 29px auto 0
+		
+		&-icon
+			fill: $accent
+			transition: fill .2s ease-in-out
+
+		&-item
+			list-style-type: none
+			padding: 0 1px
+
+			@media (max-width: 720px)
+				padding: 0 2px
+
+			&:hover
+				.main-footer__social-icon
+					fill: white
+		
+		&-youtube
+			margin-top: 4px
+		
+		&-instagram
+			margin-right: -1px
+			margin-left: 3px
+		
+		&-tg
+			padding-top: 3px
+			padding-left: 7px
+			
+

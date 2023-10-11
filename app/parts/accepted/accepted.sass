@@ -1,0 +1,64 @@
+.accepted
+	align-items: center
+	background-color: transparent
+	display: flex
+	height: 100%
+	justify-content: center
+	left: 0
+	position: fixed
+	top: 0
+	transform: translateY(-44.5%) scale(0)
+	width: 100%
+	z-index: 99999999999
+
+	&.active
+		background-color: rgba(0,0,0,.8)
+		transform: translateY(0) scale(1)
+
+	&__wrap
+		align-items: center
+		background-color: #fff
+		border-radius: 10px
+		box-shadow: 0px 4px 4px rgb(0 0 0 / 25%)
+		box-sizing: border-box
+		display: flex
+		height: 200px
+		justify-content: center
+		position: relative
+		max-width: 650px
+		padding: 0 25px
+		width: 90%
+
+	&__txt
+		color: #4C525A
+		font-size: 30px
+		font-weight: 700
+		text-align: center
+		line-height: 37px
+		text-transform: uppercase
+
+	&__thank
+		font-weight: 600
+		font-size: 16px
+		line-height: 20px
+		color: #4C525A
+		text-transform: none
+
+	&__close
+		cursor: pointer
+		position: absolute
+		right: 24px
+		top: 24px
+
+		@media (max-width: 992px)
+			right: 9px
+			top: 9px
+
+		svg
+			stroke: #646464
+			transition: stroke .2s ease-in-out
+		
+		&:hover
+			svg
+				stroke: $txt
+				

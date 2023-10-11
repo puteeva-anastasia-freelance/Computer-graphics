@@ -1,0 +1,179 @@
+.order
+	padding: 154px 0 212px
+
+	@media (max-width: 992px)
+		padding: 88px 0 72px
+	
+	@media (max-width: 400px)
+		padding-top: 49px
+		padding-bottom: 62px
+
+	&__title
+		color: #FFFFFF
+	
+	&__wrap
+		max-width: 996px
+		margin: 0 auto
+
+		@media (max-width: 992px)
+			max-width: 724px
+	
+	&__form
+		display: flex
+		justify-content: space-between
+		align-items: flex-start
+		flex-wrap: wrap
+		padding-top: 76px
+		position: relative
+
+		@media (max-width: 992px)
+			padding-top: 70px
+		
+		@media (max-width: 667px)
+			padding-top: 65px
+
+		@media (max-width: 400px)
+			padding-top: 60px
+	
+	&__name, &__phone
+		width: 47.66%
+		position: relative
+
+		@media (max-width: 992px)
+			width: 47.5%
+		
+		@media (max-width: 667px)
+			width: 398px
+			margin: 0 auto 18px
+		
+		@media (max-width: 400px)
+			width: 100%
+			max-width: 288px
+
+		&::after
+			position: absolute
+			content: ''				
+			display: block
+			top: 16px
+	
+	&__name
+		&::after
+			background-image: url("data:image/svg+xml,%3Csvg width='27' height='27' viewBox='0 0 27 27' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M13.5 12.375C14.39 12.375 15.26 12.1111 16.0001 11.6166C16.7401 11.1221 17.3169 10.4193 17.6575 9.59708C17.9981 8.77481 18.0872 7.87001 17.9135 6.9971C17.7399 6.12418 17.3113 5.32236 16.682 4.69302C16.0526 4.06368 15.2508 3.6351 14.3779 3.46147C13.505 3.28783 12.6002 3.37695 11.7779 3.71754C10.9557 4.05814 10.2529 4.63491 9.75839 5.37494C9.26392 6.11496 9 6.98499 9 7.875C9 9.06848 9.47411 10.2131 10.318 11.057C11.1619 11.9009 12.3065 12.375 13.5 12.375Z' fill='%2346B4DE'/%3E%3Cpath d='M20.25 23.625C20.5484 23.625 20.8345 23.5065 21.0455 23.2955C21.2565 23.0845 21.375 22.7984 21.375 22.5C21.375 20.4114 20.5453 18.4084 19.0685 16.9315C17.5916 15.4547 15.5886 14.625 13.5 14.625C11.4114 14.625 9.40838 15.4547 7.93153 16.9315C6.45469 18.4084 5.625 20.4114 5.625 22.5C5.625 22.7984 5.74353 23.0845 5.95451 23.2955C6.16548 23.5065 6.45163 23.625 6.75 23.625H20.25Z' fill='%2346B4DE'/%3E%3C/svg%3E%0A")
+			width: 27px				
+			height: 27px
+			right: 16px
+
+			@media (max-width: 400px)
+				top: 15px
+				right: 10px
+				width: 20px
+				height: 20px
+				background-size: contain
+
+	&__phone
+		&::after
+			width: 25px
+			height: 25px
+			background-image: url("data:image/svg+xml,%3Csvg width='25' height='25' viewBox='0 0 25 25' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M24.7321 18.9594C23.8015 17.2001 20.5697 15.2924 20.4275 15.209C20.0122 14.9727 19.5789 14.8475 19.1733 14.8475C18.5704 14.8475 18.0768 15.1237 17.7779 15.6261C17.3051 16.1916 16.7189 16.8525 16.5766 16.9549C15.4754 17.702 14.6133 17.6172 13.6595 16.6634L8.33624 11.3396C7.38846 10.3918 7.30133 9.51912 8.04333 8.42396C8.14715 8.28075 8.80804 7.69401 9.37346 7.22082C9.73404 7.00624 9.98152 6.68737 10.09 6.29621C10.2341 5.77575 10.128 5.16352 9.7878 4.56704C9.70762 4.42986 7.79909 1.19768 6.04072 0.267516C5.71259 0.0937184 5.34274 0.00195312 4.97198 0.00195312C4.36114 0.00195312 3.78644 0.240172 3.3545 0.671654L2.17824 1.84745C0.317904 3.70732 -0.355505 5.81561 0.175621 8.11344C0.61869 10.0285 1.90989 12.0663 4.014 14.1699L10.8292 20.9851C13.4922 23.6482 16.0311 24.9987 18.3753 24.9987C18.3753 24.9987 18.3753 24.9987 18.3757 24.9987C20.0998 24.9987 21.7071 24.266 23.1517 22.8214L24.3275 21.6456C25.0421 20.9314 25.2044 19.8515 24.7321 18.9594Z' fill='%2346B4DE'/%3E%3C/svg%3E ")
+			right: 17px
+
+			@media (max-width: 400px)
+				top: 14px
+				right: 10px
+				width: 20px
+				height: 20px
+				background-size: contain
+	
+	&__input
+		background: #FFFFFF
+		border: 1px solid #4C525A
+		border-radius: 10px
+		outline: none
+		height: 60px
+		font-family: $default-font
+		font-size: 14px
+		color: #000
+		font-weight: 500
+		padding-left: 20px
+		width: 100%
+		box-sizing: border-box
+		
+		@media (max-width: 400px)
+			font-size: 12px
+			height: 50px
+			padding-left: 14px
+
+		&::placeholder
+			color: $txt
+			font-weight: 400
+
+	&__button
+		font-size: 16px
+		box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25)
+		height: 60px
+
+		@media (max-width: 992px)
+			margin: 24px auto 0
+		
+		@media (max-width: 667px)
+			font-size: 14px
+			padding: 14px 39px
+		
+		@media (max-width: 400px)
+			margin-top: 21px
+			height: 52px
+			
+	&__inner
+		width: 72.8%
+		display: flex
+		flex-wrap: wrap
+		justify-content: space-between
+
+		@media (max-width: 992px)
+			width: 100%
+	
+	.policy
+		width: 100%
+
+		@media (max-width: 667px)
+			margin-top: 0
+
+		&__label
+			line-height: 22px
+			width: 100%
+			box-sizing: border-box
+
+			@media (max-width: 667px)
+				width: 398px
+				margin-right: auto
+				margin-left: auto
+			
+			@media (max-width: 400px)
+				width: 288px
+			
+			&::before
+				top: 0
+	
+	&__errors
+		margin-bottom: 15px
+		margin-top: -40px
+		width: 100%
+
+		@media (max-width: 667px)
+			width: 398px
+			margin-right: auto
+			margin-left: auto
+		
+		@media ( max-width: 400px)
+			max-width: 288px
+			width: 100%
+	
+	&__error
+		display: none
+		font-size: 12px
+		color: $accent
+		font-weight: 500	
+		line-height: 144%
+
+		@media (max-width: 768px)
+			font-size: 11px

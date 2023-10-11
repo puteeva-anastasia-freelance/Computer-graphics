@@ -1,0 +1,149 @@
+.benefit
+	padding-top: 77px
+	margin: 0 auto
+	padding-bottom: 45px
+	background-color: #2f3338
+
+	@media (max-width: 992px)
+		padding-top: 71px
+		padding-bottom: 8px
+	
+	@media (max-width: 768px)
+		padding-top: 55px
+		padding-bottom: 6px
+
+	@media (max-width: 576px)
+		padding-top: 39px	
+		padding-bottom: 4px
+
+	&__container
+		display: flex
+		flex-wrap: wrap
+		justify-content: space-between
+		max-width: 1015px
+
+		@media (max-width: 992px)
+			max-width: 887px
+
+	&__title
+		width: 100%
+
+	&__subtitle
+		font-weight: 600
+		font-size: 16px
+		text-align: center
+		width: 100%
+		display: block
+		margin-top: 18px
+		margin-bottom: 67px
+
+		@media (max-width: 992px)
+			margin-top: 22px
+			margin-bottom: 49px
+		
+		@media (max-width: 768px)
+			font-size: 15px
+			margin-top: 16px
+			margin-bottom: 47.5px
+
+		@media (max-width: 576px)
+			font-size: 14px
+			margin-top: 14px
+			margin-bottom: 46px
+	
+	&__item
+		width: 235px
+		margin-bottom: 65px
+
+		@media (max-width: 992px)
+			margin-bottom: 33px
+
+		@media (max-width: 755px)
+			width: 30%
+			margin-bottom: 23px
+		
+		@media (max-width: 502px)
+			width: 49%
+			margin-bottom: 13px
+
+			&:last-child
+				margin-right: auto
+				margin-left: auto
+		
+	&__img
+		width: 110px
+		height: 110px
+		position: relative
+		display: flex
+		align-items: center
+		justify-content: center
+		margin-bottom: -10px
+
+		svg
+			width: 58%	
+			height: auto
+
+		@media (max-width: 768px)
+			width: 85px
+			height: 83px
+
+		@media (max-width: 576px)
+			width: 60px
+			height: 56px
+
+		&::after, &::before
+			content: ''
+			display: block
+			position: absolute
+			width: 104px
+			height: 104px
+			border-radius: 20px
+
+			@media (max-width: 768px)
+				width: 79px
+				height: 79px
+
+			@media (max-width: 576px)
+				width: 54px
+				height: 54px
+		
+		&::after
+			border: 3px solid $accent
+			top: 0
+			left: 0
+		
+		&::before
+			right: -8px
+			top: -6px
+			border: 3px solid rgba(70,180,222,.5)
+
+			@media (max-width: 768px)
+				right: -7px
+			
+			@media (max-width: 576px)
+				right: -6px
+		
+	&__txt
+		text-align: center
+		font-size: 16px
+		line-height: 20px
+		color: white
+		width: 91%
+		margin-left: auto
+		margin-right: auto
+		margin-top: -16px
+
+		@media (max-width: 768px)
+			font-size: 14px
+			line-height: 17.5px
+			margin-top: -8px
+			
+		@media (max-width: 576px)
+			font-size: 12px
+			line-height: 15px
+			margin-top: 0
+	
+	&__inner
+		display: flex
+		justify-content: center
+

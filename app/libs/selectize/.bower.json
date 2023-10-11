@@ -1,0 +1,15 @@
+{
+  "name": "selectize",
+  "homepage": "https://github.com/selectize/selectize.js",
+  "version": "0.13.5",
+  "_release": "0.13.5",
+  "_resolution": {
+    "type": "version",
+    "tag": "v0.13.5",
+    "commit": "5b6cc43585e7fb8807d29b2a26ee38a22d91ad82"
+  },
+  "_source": "https://github.com/selectize/selectize.js.git",
+  "_target": "^0.13.5",
+  "_originalSource": "selectize",
+  "_direct": true
+}

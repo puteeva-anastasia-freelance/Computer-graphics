@@ -1,0 +1,42 @@
+$default-font: 'Montserrat', sans-serif
+$inter-font: 'Inter', sans-serif
+$accent: #F18B36
+$txt: #333
+
+@import '../libs/swiper/swiper-bundle.min.css'
+@import '../libs/selectize/dist/css/selectize.css'
+
+*
+	-webkit-tap-highlight-color: transparent
+
+body
+	margin: 0
+	font-family: $default-font
+	color: $txt
+	background-color: #FFFFFF
+
+button
+	background-color: transparent
+	outline: none
+	border: 0
+	font-family: $default-font
+	cursor: pointer
+
+input[type="number"]::-webkit-outer-spin-button,
+input[type="number"]::-webkit-inner-spin-button
+	-webkit-appearance: none
+
+input[type='number'],
+input[type="number"]:hover,
+input[type="number"]:focus
+	appearance: none
+	-moz-appearance: textfield
+
+.hidden
+	width: 1px
+	height: 1px
+	position: absolute
+	left: -99999px
+	margin: -1px
+
+
