@@ -109,6 +109,7 @@ function buildcopy() {
 			'app/fonts/**/*',
 			'app/libs/swiper/swiper-bundle.min.css',
 			'app/*.php',
+			'app/*.pdf',
 			'app/libs/selectize/dist/css/selectize.css',
 		], {
 			base: 'app/'
