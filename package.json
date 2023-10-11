@@ -1,16 +1,17 @@
 {
-	"name": "PROJCOM",
-	"version": "5.0.0",
+	"name": "Computer-graphics",
+	"version": "1.0.0",
 	"description": "",
 	"main": "index.js",
-	"author": "ITOBLAKA",
+	"author": "Anastasia",
 	"type": "module",
 	"browserslist": [
 		"last 10 versions"
 	],
 	"license": "ISC",
 	"scripts": {
-		"start": "gulp"
+		"start": "gulp",
+		"deploy": "gh-pages -d dist"
 	},
 	"devDependencies": {
 		"@babel/core": "^7.17.8",
@@ -24,6 +25,7 @@
 		"browsersync-ssi": "^0.2.4",
 		"cssnano": "^5.1.5",
 		"del": "^6.0.0",
+		"gh-pages": "^6.0.0",
 		"gulp": "^4.0.2",
 		"gulp-changed": "^4.0.3",
 		"gulp-concat": "^2.6.1",
@@ -46,5 +48,13 @@
 		"gulp-uglify": "^3.0.2",
 		"jquery": "^3.6.0",
 		"readmore-js": "^2.2.1"
-	}
+	},
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/puteeva-anastasia-freelance/Computer-graphics.git"
+	},
+	"bugs": {
+		"url": "https://github.com/puteeva-anastasia-freelance/Computer-graphics/issues"
+	},
+	"homepage": "https://puteeva-anastasia-freelance.github.io/Computer-graphics/"
 }
