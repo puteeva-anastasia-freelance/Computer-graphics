@@ -144,7 +144,7 @@
 					if (card.dataset.id == work.id) {
 						card.addEventListener('click', () => {
 							let popUpWithVideo = this.getPopUpWithVideo(work);
-							this.popUpOverlayEl.style.display = 'block';
+							this.popUpOverlayEl.classList.add('active-pop-up');
 							this.acceptedEl.insertAdjacentHTML('beforebegin', popUpWithVideo);
 							this.addCloseElemsClickListener();
 							this.addVideoElemsClickListener();
@@ -162,7 +162,7 @@
 			videoCloseElems.forEach((videoCloseEl) => {
 				videoCloseEl.addEventListener('click', () => {
 					let videoEl = videoCloseEl.closest('.video');
-					this.popUpOverlayEl.style.display = 'none';
+					this.popUpOverlayEl.classList.remove('active-pop-up');
 					videoEl.style.display = 'none';
 				});
 			});
@@ -175,7 +175,7 @@
 			let videoElems = document.querySelectorAll('.video');
 			videoElems.forEach((videoEl) => {
 				videoEl.addEventListener('click', () => {
-					this.popUpOverlayEl.style.display = 'none';
+					this.popUpOverlayEl.classList.remove('active-pop-up');
 					videoEl.style.display = 'none';
 				})
 			});
