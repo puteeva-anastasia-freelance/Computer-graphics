@@ -140,10 +140,11 @@
 		 * Метод добавляет маску телефона
 		 */
 		addMaskPhone() {
+			let countDigits = 0;
 			$('.mask-phone').mask('+9999999999?99');
 
 			$('.pop-up .mask-phone').on("keyup", function () {
-				let countDigits = ($('.pop-up .mask-phone').val().match(/\d+/g).join('')).length;
+				countDigits = ($(this).val().match(/\d+/g).join('')).length;
 				if (countDigits >= 10 && countDigits <= 12) {
 					$('.pop-up__error-phone').css('display', 'none');
 				}
