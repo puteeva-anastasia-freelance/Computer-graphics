@@ -29,13 +29,22 @@
 		padding: 0 25px
 		width: 90%
 
+		@media (max-width: 576px)
+			height: 150px
+
 	&__txt
 		color: #4C525A
 		font-size: 30px
 		font-weight: 700
 		text-align: center
-		line-height: 37px
+		line-height: 123%
 		text-transform: uppercase
+
+		@media (max-width: 768px)
+			font-size: 25px
+		
+		@media (max-width: 576px)
+			font-size: 20px
 
 	&__thank
 		font-weight: 600
@@ -43,6 +52,9 @@
 		line-height: 20px
 		color: #4C525A
 		text-transform: none
+
+		@media (max-width: 576px)
+			font-size: 14px
 
 	&__close
 		cursor: pointer
@@ -53,6 +65,9 @@
 		@media (max-width: 992px)
 			right: 9px
 			top: 9px
+		
+		@media (max-width: 576px)
+			right: 11px
 
 		svg
 			stroke: #646464

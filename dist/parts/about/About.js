@@ -25,6 +25,4 @@
 		let about = new About();
 		about.addButtonReadMoreClickListener();
 	});
-
-
 })();

@@ -282,6 +282,9 @@
 			this.addButtonsMoreClickListener();
 		}
 
+		/**
+		 * Метод добавляет кнопкам "Показать еще" слушатель события клика, если они есть на странице
+		 */
 		addButtonsMoreClickListener(){
 			let moreShowreelsEl = document.querySelector('#more-showreels');
 			if(moreShowreelsEl){
