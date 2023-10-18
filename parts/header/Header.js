@@ -81,6 +81,7 @@
 				this.mobileMenuEl.classList.toggle('active');
 				this.mobileBurgerEl.classList.toggle('cross');
 				this.mainHeaderEl.classList.toggle('active');
+				this.addPopUpOverlayElClickListener();
 			})
 		}
 
@@ -98,6 +99,19 @@
 			});
 		}
 
+		/**
+		 * Метод добавляет затемненному меню слушатель события клика
+		 */
+		addPopUpOverlayElClickListener(){
+			this.popUpOverlayEl.addEventListener('click', (event) => {
+				if (event.target == this.popUpOverlayEl) {
+					this.popUpOverlayEl.classList.remove('active-mobile-menu');
+					this.mobileMenuEl.classList.remove('active');
+					this.mobileBurgerEl.classList.remove('cross');
+					this.mainHeaderEl.classList.remove('active');
+				}
+			})
+		}
 	}
 
 	window.addEventListener('load', () => {
