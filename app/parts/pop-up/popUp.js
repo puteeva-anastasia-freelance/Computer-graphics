@@ -30,6 +30,7 @@
 					this.addButtonsPopUpClickListener();
 					this.checkComplianceWithPolicy();
 					this.closeMobileMenu();
+					this.addPopUpElemsClickListener();
 					numberForm++;
 				});
 			});
@@ -173,6 +174,22 @@
 						policyErrorEl.style.display = 'block';
 					}
 				});
+			});
+		}
+
+		/**
+		 * При клике на затемненный фон всплывающее окно закрывается
+		 */
+		addPopUpElemsClickListener() {
+			let popUpElems = document.querySelectorAll('.pop-up');
+			popUpElems.forEach((popUpEl) => {
+				popUpEl.addEventListener('click', (event) => {
+					let popUpContainerEl = popUpEl.querySelector('.pop-up__container');
+					if (event.target == popUpContainerEl) {
+						this.popUpOverlayEl.classList.remove('active-pop-up');
+						popUpEl.style.display = 'none';
+					}
+				})
 			});
 		}
 	}
