@@ -11,7 +11,7 @@
 	@media (max-width: 400px)
 		padding-top: 20px
 		padding-bottom: 24px
-	
+
 	&__wrap
 		max-width: 620px
 		background-color: #FFFFFF
@@ -27,7 +27,7 @@
 			padding-top: 72px
 
 		@media (max-width: 500px)
-			background-color: transparent	
+			background-color: transparent
 			padding-left: 0
 			padding-right: 0
 			padding-top: 31px
@@ -46,13 +46,13 @@
 			margin-bottom: 40px
 
 		@media (max-width: 500px)
-			color: #fff		
+			color: #fff
 
 		@media (max-width: 400px)
 			margin-top: 15.5px
 			margin-bottom: 29px
 			font-size: 12px
-	
+
 	&__form
 		width: 60%
 		display: flex
@@ -61,10 +61,10 @@
 
 		@media (max-width: 576px)
 			width: 80%
-		
+
 		@media (max-width: 500px)
 			width: 100%
-	
+
 	&__input
 		background: #FFFFFF
 		border: 1px solid #4C525A
@@ -90,7 +90,7 @@
 		&::placeholder
 			color: $txt
 			font-weight: 400
-		
+
 		&:hover, &:focus
 			filter: drop-shadow(-2px -2px 10px rgba(103, 103, 103, 0.2)) drop-shadow(2px 2px 10px rgba(103, 103, 103, 0.2))
 
@@ -100,15 +100,14 @@
 
 		&::after
 			position: absolute
-			content: ''				
+			content: ''
 			display: block
 			top: 16px
 
-		
 	&__name
 		&::after
 			background-image: url("data:image/svg+xml,%3Csvg width='27' height='27' viewBox='0 0 27 27' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M13.5 12.375C14.39 12.375 15.26 12.1111 16.0001 11.6166C16.7401 11.1221 17.3169 10.4193 17.6575 9.59708C17.9981 8.77481 18.0872 7.87001 17.9135 6.9971C17.7399 6.12418 17.3113 5.32236 16.682 4.69302C16.0526 4.06368 15.2508 3.6351 14.3779 3.46147C13.505 3.28783 12.6002 3.37695 11.7779 3.71754C10.9557 4.05814 10.2529 4.63491 9.75839 5.37494C9.26392 6.11496 9 6.98499 9 7.875C9 9.06848 9.47411 10.2131 10.318 11.057C11.1619 11.9009 12.3065 12.375 13.5 12.375Z' fill='%2346B4DE'/%3E%3Cpath d='M20.25 23.625C20.5484 23.625 20.8345 23.5065 21.0455 23.2955C21.2565 23.0845 21.375 22.7984 21.375 22.5C21.375 20.4114 20.5453 18.4084 19.0685 16.9315C17.5916 15.4547 15.5886 14.625 13.5 14.625C11.4114 14.625 9.40838 15.4547 7.93153 16.9315C6.45469 18.4084 5.625 20.4114 5.625 22.5C5.625 22.7984 5.74353 23.0845 5.95451 23.2955C6.16548 23.5065 6.45163 23.625 6.75 23.625H20.25Z' fill='%2346B4DE'/%3E%3C/svg%3E%0A")
-			width: 27px				
+			width: 27px
 			height: 27px
 			right: 16px
 
@@ -138,11 +137,11 @@
 		height: 60px
 		box-sizing: border-box
 		margin-bottom: 19px
-		
+
 		@media (max-width: 400px)
 			height: 49.5px
 
-		&.single 
+		&.single
 			.selectize-input
 				&:after
 					width: 21px
@@ -159,14 +158,12 @@
 						height: 9px
 						background-size: contain
 
-				
 				&.input-active
 					background-color: #fff
 
 					&:after
 						background-image: url("data:image/svg+xml,%3Csvg width='21' height='12' viewBox='0 0 21 12' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M20.4271 10.1146L11.0521 0.739621C10.9797 0.666929 10.8937 0.609252 10.799 0.569895C10.7042 0.530538 10.6026 0.510278 10.5 0.510278C10.3975 0.510278 10.2959 0.530538 10.2011 0.569895C10.1064 0.609252 10.0204 0.666929 9.94796 0.739621L0.57296 10.1146C0.43496 10.2627 0.359832 10.4586 0.363403 10.661C0.366974 10.8634 0.448966 11.0565 0.592104 11.1996C0.735243 11.3428 0.928352 11.4248 1.13075 11.4283C1.33315 11.4319 1.52903 11.3568 1.67713 11.2188L10.5 2.39691L19.323 11.2188C19.4711 11.3568 19.6669 11.4319 19.8693 11.4283C20.0717 11.4248 20.2648 11.3428 20.408 11.1996C20.5511 11.0565 20.6331 10.8634 20.6367 10.661C20.6403 10.4586 20.5651 10.2627 20.4271 10.1146Z' fill='%2346B4DE'/%3E%3C/svg%3E ")
 
-	
 	.selectize-input
 		background-color: #FFFFFF
 		border: 1px solid #4C525A
@@ -182,6 +179,7 @@
 
 		@media (max-width: 400px)
 			padding-left: 15px
+			padding-right: 40px
 
 		&:hover, &:focus
 			filter: drop-shadow(-2px -2px 10px rgba(103, 103, 103, 0.2)) drop-shadow(2px 2px 10px rgba(103, 103, 103, 0.2))
@@ -191,7 +189,7 @@
 
 			@media (max-width: 400px)
 				font-size: 12px
-		
+
 		&.full
 			#service-selectized
 				display: none!important
@@ -206,24 +204,24 @@
 
 			&::-webkit-input-placeholder
 				color: $txt
-			
+
 			&::-moz-placeholder
 				color: $txt
-			
+
 			&:-moz-placeholder
 				color: $txt
-			
+
 			&:-ms-input-placeholder
 				color: $txt
-	
-	.selectize-dropdown	
+
+	.selectize-dropdown
 		margin-top: -8px
 		border-width: 0.5px 1px 1px 1px
 		border-style: solid
 		border-color: #4C525A
 		border-radius: 2px
 		box-sizing: border-box
-	
+
 	.selectize-dropdown-content
 		background: #FFFFFF
 		padding-top: 14px
@@ -234,10 +232,10 @@
 			font-size: 14px
 			color: $txt
 			padding: 4.5px 17px
-			
+
 			&.active
 				background: linear-gradient(90deg, #D9D9D9 0%, rgba(217, 217, 217, 0) 100%)
-				
+
 	&__button
 		margin-top: 27px
 		margin-bottom: 3px
@@ -247,7 +245,7 @@
 			padding-right: 39px
 			margin-top: 23px
 			margin-bottom: -1px
-	
+
 	&__agreement
 		font-family: $inter-font
 		font-size: 10px
@@ -262,7 +260,7 @@
 
 		@media (max-width: 500px)
 			color: #fff
-		
+
 		@media (max-width: 400px)
 			margin-top: 10px
 
@@ -284,17 +282,17 @@
 		&__label
 			width: 100%
 			box-sizing: border-box
-	
+
 	&__errors
 		margin-top: -10px
 		margin-bottom: 10px
 		width: 100%
-	
+
 	&__error
 		display: none
 		font-size: 13px
 		color: $accent
-		font-weight: 500	
+		font-weight: 500
 		line-height: 144%
 
 		@media (max-width: 768px)
@@ -303,4 +301,3 @@
 		@media (max-width: 500px)
 			color: #e40303
 			font-size: 11px
-		

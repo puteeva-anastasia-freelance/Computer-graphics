@@ -1,11 +1,11 @@
-(function() {
+(function () {
 	"use strict";
 
 	/**
 	 * Класс для отрисовки преимуществ
 	 */
-	class Benefit{
-		constructor(){
+	class Benefit {
+		constructor() {
 			this.wrapEl = document.querySelector('.benefit__container');
 		}
 
@@ -16,7 +16,7 @@
 		insertBenefitsIntoPage(benefits) {
 			let benefitsMarkup = '';
 
-			for(let benefit of benefits){
+			for (let benefit of benefits) {
 				benefitsMarkup += this.getBenefitMarkup(benefit);
 			}
 
@@ -28,7 +28,7 @@
 		 * @param {BenefitDTO} benefit объект с информацией о преимуществе
 		 * @returns {string} html-разметка карточки преимущества
 		 */
-		getBenefitMarkup(benefit){
+		getBenefitMarkup(benefit) {
 			return `
 			<div class="benefit__item">
 				<div class="benefit__inner">
@@ -41,7 +41,7 @@
 			</div>
 			`;
 		}
-		
+
 	}
 
 	window.addEventListener('load', () => {

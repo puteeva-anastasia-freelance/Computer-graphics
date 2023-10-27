@@ -117,22 +117,25 @@
 			margin-left: 14px
 
 	&__bottom
+		width: 100%
+		position: fixed
+		top: 0
+		left: 0
+		background-color: #2F3338
+		box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25)
+		padding-top: 25px
+		padding-bottom: 23px
+		
 		@media (max-width: 700px)
 			display: none
 
 		&.default
-			display: none
+			opacity: 0
+			z-index: -1
 
 		&.fixed
-			width: 100%
-			position: fixed
-			top: 0
-			left: 0
-			background-color: #2F3338
-			box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25)
+			opacity: 1
 			z-index: 101
-			padding-top: 25px
-			padding-bottom: 23px
 
 		&-container
 			max-width: 1358px
@@ -183,6 +186,9 @@
 			font-size: 14px
 
 		&:hover
+			color: $accent
+
+		&.active
 			color: $accent
 
 	&__item
@@ -297,7 +303,7 @@
 
 				@media (max-width: 700px)
 					fill: $accent
-					
+
 	&__logo
 		@media (max-width: 700px)
 			width: auto

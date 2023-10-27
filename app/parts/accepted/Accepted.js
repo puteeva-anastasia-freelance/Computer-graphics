@@ -32,7 +32,7 @@
 		/**
 		 * Метод добавляет крестику всплывающего окна "Ваша заявка принята" слушатель события клика
 		 */
-		addAcceptedCloseElClickListener(){
+		addAcceptedCloseElClickListener() {
 			this.acceptedCloseEl.addEventListener('click', () => {
 				this.acceptedEl.classList.remove('active');
 			});

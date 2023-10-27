@@ -1,11 +1,11 @@
-(function(){
+(function () {
 	"use strict";
 
 	/**
 	 * Класс управляет блоком "Обратная связь"
 	 */
-	class Order{
-		constructor(){
+	class Order {
+		constructor() {
 			this.buttonEl = document.querySelector('.order__button');
 			this.inputPhoneEl = document.querySelector('.order .mask-phone');
 			this.errorPhone = document.querySelector('.order__error-phone');
@@ -15,7 +15,7 @@
 		/**
 		 * Инициализация управления блоком "Обратная связь"
 		 */
-		init(){
+		init() {
 			this.addButtonClickListener();
 			this.addMaskPhone();
 			this.checkComplianceWithPolicy();
@@ -24,11 +24,11 @@
 		/**
 		 * Метод добавляет кнопке отправки формы слушатель события клика
 		 */
-		addButtonClickListener(){
+		addButtonClickListener() {
 			this.buttonEl.addEventListener('click', () => {
-				if(this.inputPhoneEl.value == ''){
+				if (this.inputPhoneEl.value == '') {
 					this.errorPhone.style.display = 'block';
-				} else{
+				} else {
 					this.errorPhone.style.display = 'none';
 				}
 			});
@@ -40,11 +40,11 @@
 		addMaskPhone() {
 			$('.order .mask-phone').mask('+9999999999?99');
 
-			$('.order .mask-phone').on( "keyup", function() {
-				let countDigits = ($('.order .mask-phone').val().match( /\d+/g ).join('')).length;
-				if (countDigits >= 10 && countDigits <= 12){	
+			$('.order .mask-phone').on("keyup", function () {
+				let countDigits = ($('.order .mask-phone').val().match(/\d+/g).join('')).length;
+				if (countDigits >= 10 && countDigits <= 12) {
 					$('.order__error-phone').css('display', 'none');
-				}	
+				}
 			});
 		}
 

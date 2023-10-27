@@ -3,7 +3,7 @@ $(window).on('load', function () {
 		let headerHeight = 0;
 
 		if ($(window).width() > 700) {
-			headerHeight = $('.main-header__bottom.fixed').outerHeight();
+			headerHeight = $('.main-header__bottom').outerHeight();
 		} else {
 			headerHeight = $('.main-header').outerHeight();
 		}
@@ -18,7 +18,7 @@ $(window).on('load', function () {
 		let headerHeight = 0;
 
 		if ($(window).width() > 700) {
-			headerHeight = $('.main-header__bottom.fixed').outerHeight();
+			headerHeight = $('.main-header__bottom').outerHeight();
 		} else {
 			headerHeight = $('.main-header').outerHeight();
 		}
@@ -33,7 +33,7 @@ $(window).on('load', function () {
 		let headerHeight = 0;
 
 		if ($(window).width() > 700) {
-			headerHeight = $('.main-header__bottom.fixed').outerHeight();
+			headerHeight = $('.main-header__bottom').outerHeight();
 		} else {
 			headerHeight = $('.main-header').outerHeight();
 		}
@@ -48,7 +48,7 @@ $(window).on('load', function () {
 		let headerHeight = 0;
 
 		if ($(window).width() > 700) {
-			headerHeight = $('.main-header__bottom.fixed').outerHeight();
+			headerHeight = $('.main-header__bottom').outerHeight();
 		} else {
 			headerHeight = $('.main-header').outerHeight();
 		}

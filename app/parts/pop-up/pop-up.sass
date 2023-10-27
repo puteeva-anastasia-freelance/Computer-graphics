@@ -24,7 +24,7 @@
 			@media (max-width: 700px)
 				display: block
 				z-index: 1000
-		
+
 		&.active-pop-up
 			display: block
 			z-index: 1000
@@ -37,7 +37,7 @@
 	&__body
 		margin: auto
 		width: 650px
-		box-shadow: 0px 4px 4px  rgba(0, 0, 0, 0.25)
+		box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25)
 		border-radius: 10px
 		padding: 57px 43px 39px
 		position: relative
@@ -60,19 +60,19 @@
 			right: 3px
 
 		&-svg
-			stroke:#646464
+			stroke: #646464
 			transition: stroke .2s ease-in-out
 
 			@media (max-width: 768px)
 				stroke: #CDCDCD
-		
+
 		&:hover
 			.pop-up__close-svg
 				stroke: white
 
 				@media (max-width: 768px)
 					stroke: white
-	
+
 	&__title
 		font-weight: 700
 		font-size: 30px
@@ -83,7 +83,7 @@
 		@media (max-width: 768px)
 			font-size: 22px
 			text-align: center
-	
+
 	&__txt
 		font-weight: 600
 		font-size: 16px
@@ -96,13 +96,13 @@
 			margin-top: 14px
 			line-height: 20px
 			margin-bottom: 21px
-			
+
 	&__form
 		@media (max-width: 768px)
 			display: flex
 			flex-wrap: wrap
 			justify-content: center
-		
+
 	&__name, &__phone
 		width: 344px
 		position: relative
@@ -113,14 +113,14 @@
 
 		&::after
 			position: absolute
-			content: ''				
+			content: ''
 			display: block
 			top: 16px
-	
+
 	&__name
 		&::after
 			background-image: url("data:image/svg+xml,%3Csvg width='27' height='27' viewBox='0 0 27 27' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M13.5 12.375C14.39 12.375 15.26 12.1111 16.0001 11.6166C16.7401 11.1221 17.3169 10.4193 17.6575 9.59708C17.9981 8.77481 18.0872 7.87001 17.9135 6.9971C17.7399 6.12418 17.3113 5.32236 16.682 4.69302C16.0526 4.06368 15.2508 3.6351 14.3779 3.46147C13.505 3.28783 12.6002 3.37695 11.7779 3.71754C10.9557 4.05814 10.2529 4.63491 9.75839 5.37494C9.26392 6.11496 9 6.98499 9 7.875C9 9.06848 9.47411 10.2131 10.318 11.057C11.1619 11.9009 12.3065 12.375 13.5 12.375Z' fill='%2346B4DE'/%3E%3Cpath d='M20.25 23.625C20.5484 23.625 20.8345 23.5065 21.0455 23.2955C21.2565 23.0845 21.375 22.7984 21.375 22.5C21.375 20.4114 20.5453 18.4084 19.0685 16.9315C17.5916 15.4547 15.5886 14.625 13.5 14.625C11.4114 14.625 9.40838 15.4547 7.93153 16.9315C6.45469 18.4084 5.625 20.4114 5.625 22.5C5.625 22.7984 5.74353 23.0845 5.95451 23.2955C6.16548 23.5065 6.45163 23.625 6.75 23.625H20.25Z' fill='%2346B4DE'/%3E%3C/svg%3E%0A")
-			width: 27px				
+			width: 27px
 			height: 27px
 			right: 16px
 
@@ -143,7 +143,7 @@
 				width: 20px
 				background-size: contain
 				right: 11px
-	
+
 	&__input
 		background: #FFFFFF
 		border: 1px solid #4C525A
@@ -181,23 +181,23 @@
 			padding-top: 13px
 			padding-bottom: 13px
 			font-size: 14px
-	
+
 	&__errors
 		margin-bottom: 15px
 
 		@media (max-width: 768px)
 			width: 344px
-	
+
 	&__error
 		display: none
 		font-size: 12px
 		color: $accent
-		font-weight: 500	
+		font-weight: 500
 		line-height: 144%
 
 		@media (max-width: 768px)
 			font-size: 11px
-	
+
 	&__agreement
 		color: white
 

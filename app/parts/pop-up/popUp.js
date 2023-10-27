@@ -39,7 +39,7 @@
 		/**
 		 * Метод закрывает мобильное меню
 		 */
-		closeMobileMenu(){
+		closeMobileMenu() {
 			this.popUpOverlayEl.classList.remove('active-mobile-menu');
 			this.mobileMenuEl.classList.remove('active');
 			this.mobileBurgerEl.classList.remove('cross');
@@ -119,7 +119,7 @@
 						popUpErrorPhoneEl.style.display = 'none';
 					}
 				});
-			});			
+			});
 		}
 
 		/**

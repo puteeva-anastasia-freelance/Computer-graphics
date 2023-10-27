@@ -113,7 +113,7 @@
 		 */
 		checkWidthWidth(sliderServices) {
 			let windowWidth = +this.serviceEl.getBoundingClientRect().width.toFixed(1);
-	
+
 			if (windowWidth > 904) {
 				sliderServices.allowTouchMove = false;
 			} else {
@@ -134,7 +134,7 @@
 		/**
 		 * Метод устанавливает высоту карточкам
 		 */
-		setHeightCards(){
+		setHeightCards() {
 			let itemElems = document.querySelectorAll('.service__item');
 
 			itemElems.forEach((itemEl) => {
