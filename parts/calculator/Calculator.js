@@ -1,11 +1,11 @@
-(function(){
+(function () {
 	"use strict";
 
 	/**
 	 * Класс управляет блоком "Узнать стоимость работы"
 	 */
-	class Calculator{
-		constructor(){
+	class Calculator {
+		constructor() {
 			this.buttonEl = document.querySelector('.calculator__button');
 			this.inputPhoneEl = document.querySelector('.calculator .mask-phone');
 			this.errorPhone = document.querySelector('.calculator__error-phone');
@@ -17,7 +17,7 @@
 		 * Инициализация блока "Узнать стоимость работы"
 		 * @param {ServiceDTO[]} services массив услуг из файла services.js
 		 */
-		init(services){
+		init(services) {
 			this.addButtonClickListener();
 			this.addMaskPhone();
 			this.loadServicesInSelect(services);
@@ -28,11 +28,11 @@
 		/**
 		 * Метод добавляет кнопке отправки формы слушатель события клика
 		 */
-		addButtonClickListener(){
+		addButtonClickListener() {
 			this.buttonEl.addEventListener('click', () => {
-				if(this.inputPhoneEl.value == ''){
+				if (this.inputPhoneEl.value == '') {
 					this.errorPhone.style.display = 'block';
-				} else{
+				} else {
 					this.errorPhone.style.display = 'none';
 				}
 			});
@@ -44,11 +44,11 @@
 		addMaskPhone() {
 			$('.calculator .mask-phone').mask('+9999999999?99');
 
-			$('.calculator .mask-phone').on( "keyup", function() {
-				let countDigits = ($('.calculator .mask-phone').val().match( /\d+/g ).join('')).length;
-				if (countDigits >= 10 && countDigits <= 12){	
+			$('.calculator .mask-phone').on("keyup", function () {
+				let countDigits = ($('.calculator .mask-phone').val().match(/\d+/g).join('')).length;
+				if (countDigits >= 10 && countDigits <= 12) {
 					$('.calculator__error-phone').css('display', 'none');
-				}	
+				}
 			});
 		}
 
@@ -56,10 +56,10 @@
 		 * Метод загружает услуги в выпадающий список
 		 * @param {ServiceDTO[]} services массив услуг из файла services.js
 		 */
-		loadServicesInSelect(services){
+		loadServicesInSelect(services) {
 			let servicesMarkup = '';
 
-			for(let service of services){
+			for (let service of services) {
 				servicesMarkup += `<option value="${service.name}">${service.name}</option>`
 			}
 
@@ -69,7 +69,7 @@
 		/**
 		 * Метод добавляет плагин selectize выпадающему списку услуг
 		 */
-		addSelectizeService(){
+		addSelectizeService() {
 			$('#service').selectize({
 				placeholder: 'Укажите нужную услугу	'
 			});

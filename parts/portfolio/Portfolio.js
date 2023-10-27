@@ -14,6 +14,8 @@
 			this.portfolioEl = document.querySelector('.portfolio');
 			this.showreelsEl = document.querySelector('#portfolio-showreels');
 			this.projectsEl = document.querySelector('#portfolio-projects');
+			this.moreShowreelsEl = document.querySelector('#more-showreels');
+			this.moreProjectsEl = document.querySelector('#more-projects');
 
 			this.settings = {
 				slidesPerView: 'auto',
@@ -138,7 +140,7 @@
 		 */
 		addCardsClickListener(works) {
 			let cardsElems = document.querySelectorAll('.portfolio__item');
-			
+
 			cardsElems.forEach((card) => {
 				for (let work of works) {
 					if (card.dataset.id == work.id) {
@@ -164,12 +166,13 @@
 					let videoEl = videoCloseEl.closest('.video');
 					this.popUpOverlayEl.classList.remove('active-pop-up');
 					videoEl.style.display = 'none';
+					this.removeIframeVideo(videoEl);
 				});
 			});
 		}
 
 		/**
-		 * При клике на затемненный фон всплывающее окно с видео закрывается
+		 * При клике на затемненный фон всплывающее окно с видео закрывается и видео останавливается
 		 */
 		addVideoElemsClickListener() {
 			let videoElems = document.querySelectorAll('.video');
@@ -177,8 +180,20 @@
 				videoEl.addEventListener('click', () => {
 					this.popUpOverlayEl.classList.remove('active-pop-up');
 					videoEl.style.display = 'none';
+					this.removeIframeVideo(videoEl);
 				})
 			});
+		}
+
+		/**
+		 * Метод останавливает видео
+		 * @param {HTMLVideoElement} videoEl элемент видео, который открыт
+		 */
+		removeIframeVideo(videoEl) {
+			let iframeEl = videoEl.querySelector('iframe');
+			if(iframeEl){
+				iframeEl.parentNode.removeChild(iframeEl);
+			}
 		}
 
 		/**
@@ -192,7 +207,7 @@
 				<div class="video__body">
 					<iframe width="1200" height="90%" src="${work.youtubeLink}" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 				</div>
-				<button type="button" class="video__close">
+				<button type="button" class="video__close" id="video-close">
 					<svg width="27" height="27" viewBox="0 0 27 27" xmlns="http://www.w3.org/2000/svg" class="video__close-icon">
 						<path d="M1.9375 1.9375L25.0625 25.0625" stroke-width="2" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
 						<path d="M25.0625 1.9375L1.9375 25.0625" stroke-width="2" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
@@ -261,72 +276,94 @@
 		}
 
 		/**
-		 * Метод добавляет кнопки "Смотреть еще"
+		 * Метод добавляет кнопки "Показать еще"
 		 * @param {WorkDTO[]} works массив выполненных работ из файла works.js
 		 */
 		addButtonsMore(works) {
-			let numberCardsShowreels = document.querySelectorAll('#portfolio-showreels .portfolio__item').length;
-			let numberCardsProjects = document.querySelectorAll('#portfolio-projects .portfolio__item').length;
+			this.addButtonMoreShowreels(works);
+			this.addButtonMoreProjects(works);
+		}
 
+		/**
+		 * Метод добавляет кнопку "Показать еще" для шоурилов
+		 * @param {WorkDTO[]} works массив выполненных работ из файла works.js
+		 */
+		addButtonMoreShowreels(works) {
+			let numberCardsShowreels = document.querySelectorAll('#portfolio-showreels .portfolio__item').length;
 			let countShowreels = this.findNumberWorks(works, 'showreel');
-			let countProjects = this.findNumberWorks(works, 'project');
 
 			if (countShowreels > numberCardsShowreels) {
-				this.showreelsEl.insertAdjacentHTML('afterend', '<div class="portfolio__button-wrap"><button type="button" class="button portfolio__button" id="more-showreels">Показать еще</button></div>')
+				this.moreShowreelsEl.style.display = 'block';
+			} else {
+				this.moreShowreelsEl.style.display = 'none';
 			}
+
+			this.addButtonMoreShowreelsClickListener(works);
+		}
+
+		/**
+		 * Метод добавляет кнопку "Показать еще" для проектов
+		 * @param {WorkDTO[]} works массив выполненных работ из файла works.js
+		 */
+		addButtonMoreProjects(works) {
+			let numberCardsProjects = document.querySelectorAll('#portfolio-projects .portfolio__item').length;
+			let countProjects = this.findNumberWorks(works, 'project');
 
 			if (countProjects > numberCardsProjects) {
-				this.projectsEl.insertAdjacentHTML('afterend', '<div class="portfolio__button-wrap"><button type="button" class="button portfolio__button" id="more-projects">Показать еще</button></div>')
+				this.moreProjectsEl.style.display = 'block';
+			} else {
+				this.moreProjectsEl.style.display = 'none';
 			}
 
-			this.addButtonsMoreClickListener();
+			this.addButtonMoreProjectsClickListener(works);
 		}
 
 		/**
-		 * Метод добавляет кнопкам "Показать еще" слушатель события клика, если они есть на странице
+		 * Метод добавляет кнопке "Показать еще" для шоурилов слушатель события клика
+		 * @param {WorkDTO[]} works массив выполненных работ из файла works.js
 		 */
-		addButtonsMoreClickListener(){
-			let moreShowreelsEl = document.querySelector('#more-showreels');
-			if(moreShowreelsEl){
-				moreShowreelsEl.addEventListener('click', () => {
-					let showreelsMarkup = '';
-					this.wrapperShowreelsEl.innerHTML = '';
-	
-					for (let work of works) {
-						if (work.type == 'project') {
-							showreelsMarkup += this.getCardMarkup(work, 'Смотреть трейлер');
-						}
-					}
-	
-					this.wrapperProjectsEl.insertAdjacentHTML('beforeend', showreelsMarkup);
-					this.addCardsClickListener(works);
-					this.setHeightCards();
-					moreShowreelsEl.style.display = 'none';
-				});
-			}
+		addButtonMoreShowreelsClickListener(works) {
+			this.moreShowreelsEl.addEventListener('click', () => {
+				let showreelsMarkup = '';
+				this.wrapperShowreelsEl.innerHTML = '';
 
-			let moreProjectsEl = document.querySelector('#more-projects');
-			if(moreProjectsEl){
-				moreProjectsEl.addEventListener('click', () => {
-					let projectsMarkup = '';
-					this.wrapperProjectsEl.innerHTML = '';
-	
-					for (let work of works) {
-						if (work.type == 'project') {
-							projectsMarkup += this.getCardMarkup(work, 'Смотреть трейлер');
-						}
+				for (let work of works) {
+					if (work.type == 'showreel') {
+						showreelsMarkup += this.getCardMarkup(work, 'Смотреть трейлер');
 					}
-	
-					this.wrapperProjectsEl.insertAdjacentHTML('beforeend', projectsMarkup);
-					this.addCardsClickListener(works);
-					this.setHeightCards();
-					moreProjectsEl.style.display = 'none';
-				});
-			}
+				}
+
+				this.wrapperShowreelsEl.insertAdjacentHTML('beforeend', showreelsMarkup);
+				this.addCardsClickListener(works);
+				this.setHeightCards();
+				this.moreShowreelsEl.style.display = 'none';
+			});
 		}
 
 		/**
-		 * Метод находит число выполненных
+		 * Метод добавляет кнопке "Показать еще" для проектов слушатель события клика
+		 * @param {WorkDTO[]} works массив выполненных работ из файла works.js
+		 */
+		addButtonMoreProjectsClickListener(works) {
+			this.moreProjectsEl.addEventListener('click', () => {
+				let projectsMarkup = '';
+				this.wrapperProjectsEl.innerHTML = '';
+
+				for (let work of works) {
+					if (work.type == 'project') {
+						projectsMarkup += this.getCardMarkup(work, 'Смотреть трейлер');
+					}
+				}
+
+				this.wrapperProjectsEl.insertAdjacentHTML('beforeend', projectsMarkup);
+				this.addCardsClickListener(works);
+				this.setHeightCards();
+				this.moreProjectsEl.style.display = 'none';
+			});
+		}
+
+		/**
+		 * Метод находит число выполненных работ определенного типа
 		 * @param {WorkDTO[]} works массив выполненных работ из файла works.js
 		 * @param {string} type тип работы
 		 * @returns {number} количество выполненных работ

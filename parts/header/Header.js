@@ -12,6 +12,7 @@
 			this.popUpOverlayEl = document.querySelector('.pop-up__overlay');
 			this.linkElems = document.querySelectorAll('.main-header__link');
 			this.mainHeaderEl = document.querySelector('.main-header');
+			this.sectionsElems = document.querySelectorAll('header, section, footer');
 		}
 
 		/**
@@ -29,7 +30,7 @@
 		/**
 		 * Метод добавляет окну браузера слушатель события изменения размеров окна браузера
 		 */
-		addWindowResizeListener(){
+		addWindowResizeListener() {
 			window.addEventListener('resize', () => {
 				this.setMobileMenuHeight();
 				this.setMobileMenuTop();
@@ -52,7 +53,7 @@
 		/**
 		 * Метод устанавливает мобильному меню расстояние от верхней границы
 		 */
-		setMobileMenuTop(){
+		setMobileMenuTop() {
 			let mainHeaderHeight = this.mainHeaderEl.clientHeight;
 			this.mobileMenuEl.style.top = `${mainHeaderHeight}px`;
 		}
@@ -62,14 +63,46 @@
 		 */
 		addWindowScrollListener() {
 			window.addEventListener('scroll', () => {
-				if (window.scrollY > 100 && this.bottomEl.classList.contains('default')) {
-					this.bottomEl.classList.remove('default');
-					this.bottomEl.classList.add('fixed');
-				} else if (window.scrollY <= 100 && this.bottomEl.classList.contains('fixed')) {
-					this.bottomEl.classList.add('default');
-					this.bottomEl.classList.remove('fixed');
-				}
+				this.setPinnedMenu();
+				this.highlightNameOfCurrentSection();
 			});
+		}
+
+		/**
+		 * Метод устанавливает закрепленное меню
+		 */
+		setPinnedMenu() {
+			if (window.scrollY > 100 && this.bottomEl.classList.contains('default')) {
+				this.bottomEl.classList.remove('default');
+				this.bottomEl.classList.add('fixed');
+			} else if (window.scrollY <= 100 && this.bottomEl.classList.contains('fixed')) {
+				this.bottomEl.classList.add('default');
+				this.bottomEl.classList.remove('fixed');
+			}
+		}
+
+		/**
+		 * Метод выделяет название текущей секции в закрепленном меню
+		 */
+		highlightNameOfCurrentSection() {
+			this.sectionsElems.forEach((section) => {
+				let rect = section.getBoundingClientRect();
+				let top = rect.top + window.pageYOffset - this.bottomEl.offsetHeight;
+				let bottom = top + rect.height;
+				let scroll = window.pageYOffset;
+				let id = section.getAttribute('id');
+				let activeLink = this.bottomEl.querySelector('a.active');
+				let targetLink = document.querySelector(`a[data-section="${id}"]`);
+
+				if (scroll > top && scroll < bottom) {
+					if (activeLink) {
+						activeLink.classList.remove("active");
+					}
+					if (targetLink) {
+						targetLink.classList.add("active");
+					}
+				}
+			})
 		}
 
 		/**
@@ -102,7 +135,7 @@
 		/**
 		 * Метод добавляет затемненному меню слушатель события клика
 		 */
-		addPopUpOverlayElClickListener(){
+		addPopUpOverlayElClickListener() {
 			this.popUpOverlayEl.addEventListener('click', (event) => {
 				if (event.target == this.popUpOverlayEl) {
 					this.popUpOverlayEl.classList.remove('active-mobile-menu');
