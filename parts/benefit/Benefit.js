@@ -1,53 +1,11 @@
-(function () {
-	"use strict";
-
-	/**
-	 * Класс для отрисовки преимуществ
-	 */
-	class Benefit {
-		constructor() {
-			this.wrapEl = document.querySelector('.benefit__container');
-		}
-
-		/**
-		 * Метод вставляет карточки преимуществ на страницу
-		 * @param {BenefitDTO[]} benefits массив преимуществ из файла benefits.js
-		 */
-		insertBenefitsIntoPage(benefits) {
-			let benefitsMarkup = '';
-
-			for (let benefit of benefits) {
-				benefitsMarkup += this.getBenefitMarkup(benefit);
-			}
-
-			this.wrapEl.insertAdjacentHTML('beforeend', benefitsMarkup);
-		}
-
-		/**
-		 * Метод получает разметку одной карточки преимущества
-		 * @param {BenefitDTO} benefit объект с информацией о преимуществе
-		 * @returns {string} html-разметка карточки преимущества
-		 */
-		getBenefitMarkup(benefit) {
-			return `
+!function(){"use strict";class e{constructor(){this.wrapEl=document.querySelector(".benefit__container")}insertBenefitsIntoPage(e){let t="";for(var i of e)t+=this.getBenefitMarkup(i);this.wrapEl.insertAdjacentHTML("beforeend",t)}getBenefitMarkup(e){return`
 			<div class="benefit__item">
 				<div class="benefit__inner">
 					<div class="benefit__img">
-						${benefit.image}
+						${e.image}
 					</div>
 				</div>
-				<h4 class="h4">${benefit.name}</h4>
-				<p class="benefit__txt">${benefit.description}</p>
+				<h3 class="h4">${e.name}</h3>
+				<p class="benefit__txt">${e.description}</p>
 			</div>
-			`;
-		}
-
-	}
-
-	window.addEventListener('load', () => {
-		let benefit = new Benefit();
-		benefit.insertBenefitsIntoPage(benefits);
-	});
-
-
-})();
+			`}}window.addEventListener("load",()=>{(new e).insertBenefitsIntoPage(benefits)})}();
