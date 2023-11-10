@@ -34,6 +34,7 @@ import concat from 'gulp-concat'
 import rsync from 'gulp-rsync'
 import del from 'del'
 import uglify from 'gulp-uglify'
+import webp from 'gulp-webp'
 
 function browsersync() {
 	browserSync.init({
@@ -67,6 +68,24 @@ function scripts() {
 		.pipe(browserSync.stream()) // Триггерим Browsersync для обновления страницы
 }
 
+function scriptsParts() {
+	return src([
+			'app/parts/**/*.js',
+		])
+		.pipe(uglify())
+		.pipe(dest('dist/parts/'))
+}
+
+function scriptsJS() {
+	return src([
+			'app/js/**/*',
+			'!app/js/app.js',
+			'!app/js/app.min.js',
+		])
+		.pipe(uglify())
+		.pipe(dest('dist/js/'))
+}
+
 function styles() {
 	return src([`app/${preprocessor}/*.*`, `!app/${preprocessor}/_*.*`])
 		.pipe(eval(`${preprocessor}glob`)())
@@ -90,20 +109,22 @@ function styles() {
 		.pipe(browserSync.stream())
 }
 
-function images() {
-	return src(['app/img/src/**/*'])
-		.pipe(changed('app/img/dist'))
-		.pipe(imagemin())
+function convertToWebp() {
+	return src('app/img/src/**/*.+(jpg|jpeg|png)')
+		.pipe(webp())
+		.pipe(dest('app/img/src'))
 		.pipe(dest('app/img/dist'))
 		.pipe(browserSync.stream())
+}
+
+function cleanImages() {
+	return del(['app/img/dist/**/*.png', 'app/img/dist/**/*.jpg', 'app/img/dist/**/*.jpeg']);
 }
 
 function buildcopy() {
 	return src([
 			'app/css/*.min.*',
-			'app/parts/**/*.js',
-			'app/js/**/*',
-			'!app/js/app.js',
+			'app/js/app.min.js',
 			'app/img/**/*.*',
 			'!app/img/src/**/*',
 			'app/fonts/**/*',
@@ -153,7 +174,7 @@ function startwatch() {
 	}, scripts)
 	watch('app/img/src/**/*', {
 		usePolling: true
-	}, images)
+	}, convertToWebp)
 	watch(`app/**/*.{${fileswatch}}`, {
 		usePolling: true
 	}).on('change', browserSync.reload)
@@ -161,11 +182,15 @@ function startwatch() {
 
 export {
 	scripts,
+	scriptsParts,
+	scriptsJS,
 	styles,
-	images,
+	convertToWebp,
+	cleanImages,
 	deploy
 }
-export let assets = series(scripts, styles, images)
-export let build = series(cleandist, images, scripts, styles, buildcopy, buildhtml)
 
-export default series(scripts, styles, images, parallel(browsersync, startwatch))
+export let assets = series(scripts, scriptsParts, scriptsJS, styles, convertToWebp, cleanImages, )
+export let build = series(cleandist, convertToWebp, cleanImages, scripts, scriptsParts, scriptsJS, styles, buildcopy, buildhtml)
+
+export default series(scripts, scriptsParts, scriptsJS, styles, convertToWebp, cleanImages, parallel(browsersync, startwatch))

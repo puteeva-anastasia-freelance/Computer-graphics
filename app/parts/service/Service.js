@@ -64,7 +64,7 @@
 				<div class="service__item" style="background: url(${this.pathToServicesImages}/${service.id}/${service.image}) center / cover no-repeat;" data-id="${service.id}">
 					<div class="service__inner">
 						<div>
-							<h5 class="h5">${service.name}</h5>
+							<h3 class="h5">${service.name}</h3>
 							<p class="service__txt">${service.description}</p>
 						</div>
 						<button type="button" class="button service__button button__feedback" data-value="Заказать: ${service.name}">заказать услугу</button>

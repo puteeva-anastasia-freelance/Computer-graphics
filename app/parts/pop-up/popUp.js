@@ -66,7 +66,7 @@
 			return `<div class="pop-up">
 			<div class="pop-up__container">
 				<div class="pop-up__body"
-					style="background: 0 0 / cover no-repeat url(img/dist/bg-popup.jpg);">
+					style="background: 0 0 / cover no-repeat url(img/dist/bg-popup.webp);">
 					<h6 class="pop-up__title">Обратная связь</h6>
 					<p class="txt pop-up__txt">Заполните форму и мы свяжемся с Вами!</p>
 					<form class="pop-up__form form-application">

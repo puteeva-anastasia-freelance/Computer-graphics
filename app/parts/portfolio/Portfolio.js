@@ -122,7 +122,7 @@
 			<div class="swiper-slide">
 				<div class="portfolio__item" data-id="${work.id}">
 					<div class="portfolio__img" style="background: url(${this.pathToWorksImages}/${work.image}) 0 0 / cover no-repeat" >
-						<button type="button" class="portfolio__play">
+						<button type="button" class="portfolio__play" aria-label="Запустить видео">
 							<span class="portfolio__play-txt">${textHover}</span>
 							<svg width="60" height="54" viewBox="0 0 60 54" fill="none" xmlns="http://www.w3.org/2000/svg">
 								<path d="M10.8333 0.333252H49.1667C54.9434 0.333252 59.6642 4.85477 59.9829 10.5518L60 11.1666V42.8333C60 48.61 55.4785 53.3307 49.7814 53.6494L49.1667 53.6666H10.8333C5.05656 53.6666 0.335847 49.1451 0.0171494 43.448L0 42.8333V11.1666C0 5.38981 4.52152 0.669098 10.2186 0.350401L10.8333 0.333252H49.1667H10.8333ZM23.5093 18.9513C23.3936 19.1827 23.3333 19.4379 23.3333 19.6966V34.3032C23.3333 35.2237 24.0795 35.9699 25 35.9699C25.2587 35.9699 25.5139 35.9096 25.7454 35.7939L40.3519 28.4906C41.1752 28.079 41.5089 27.0779 41.0973 26.2546C40.936 25.932 40.6745 25.6705 40.3519 25.5092L25.7454 18.2059C24.9221 17.7943 23.9209 18.128 23.5093 18.9513Z" fill="#F18B36"/>

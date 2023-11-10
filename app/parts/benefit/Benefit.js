@@ -36,7 +36,7 @@
 						${benefit.image}
 					</div>
 				</div>
-				<h4 class="h4">${benefit.name}</h4>
+				<h3 class="h4">${benefit.name}</h3>
 				<p class="benefit__txt">${benefit.description}</p>
 			</div>
 			`;
