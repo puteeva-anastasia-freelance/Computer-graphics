@@ -35,6 +35,7 @@ import rsync from 'gulp-rsync'
 import del from 'del'
 import uglify from 'gulp-uglify'
 import webp from 'gulp-webp'
+import htmlmin from 'gulp-htmlmin'
 
 function browsersync() {
 	browserSync.init({
@@ -138,6 +139,12 @@ function buildcopy() {
 		.pipe(dest('dist'))
 }
 
+function minifyhtml(){
+	return src('dist/*.html')
+	.pipe(htmlmin({ collapseWhitespace: true }))
+	.pipe(dest('dist'))
+	}
+
 async function buildhtml() {
 	let includes = new ssi('app/', 'dist/', '/*.html')
 	includes.compile();
@@ -191,6 +198,6 @@ export {
 }
 
 export let assets = series(scripts, scriptsParts, scriptsJS, styles, convertToWebp, cleanImages, )
-export let build = series(cleandist, convertToWebp, cleanImages, scripts, scriptsParts, scriptsJS, styles, buildcopy, buildhtml)
+export let build = series(cleandist, convertToWebp, cleanImages, scripts, scriptsParts, scriptsJS, styles, buildcopy, buildhtml, minifyhtml)
 
 export default series(scripts, scriptsParts, scriptsJS, styles, convertToWebp, cleanImages, parallel(browsersync, startwatch))
